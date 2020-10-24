@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function Menu({ name, price, description, image, id, addToCart }) {
+function Menu({ name, price, description, image, id, addToCart, qty }) {
 
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(qty)
 
   const changeQuantity = (event) => {
     setQuantity(event.target.value)

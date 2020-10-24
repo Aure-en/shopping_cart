@@ -22,7 +22,7 @@ function Shop({ cart, updateCart }) {
         menu.map(
           item => (
             <li className="menu" key={item.id}>
-              <Menu name={item.name} price={item.price} description={item.description} image={item.image} id={item.id} addToCart={addToCart} />
+              <Menu name={item.name} price={item.price} description={item.description} image={item.image} qty={0} id={item.id} addToCart={addToCart} />
             </li>
           )
         )

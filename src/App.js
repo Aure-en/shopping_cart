@@ -22,7 +22,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route exact path="/shop" render={(props) => <Shop cart={cart} updateCart={updateCart} {...props} />} />
-            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/cart" render={(props) => <Cart cart={cart} updateCart={updateCart} {...props} />} />
             <Route path="/shop/:id" render={(props) => <ShopDetails cart={cart} updateCart={updateCart} {...props} />} />
           </Switch>
       </div>
