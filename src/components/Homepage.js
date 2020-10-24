@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from '../styles/components/homepage.module.scss'
 
 function Homepage() {
   return (
-    <main className="homepage">
-      <div className="description">
+    <main className={styles.homepage}>
+      <div className={styles.description}>
         <h1 className="description__title">Rhodes Restaurant</h1>
 
         <div className="description__text">
@@ -15,9 +16,7 @@ function Homepage() {
           <p>Presented with a flourish of fine hospitality, the restaurant’s effect is transportive, a seamless service overseen and orchestrated by more than 150 staff members behind-the-scenes.</p>
         </div>
       </div>
-
       <Link to="/shop">Order now</Link>
-
     </main>
   )
 }

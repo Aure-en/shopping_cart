@@ -5,6 +5,7 @@ import Homepage from "./components/Homepage"
 import Shop from "./components/Shop"
 import Cart from "./components/Cart"
 import ShopDetails from "./components/ShopDetails"
+import './styles/main.scss'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <Route exact path="/" component={Homepage} />
             <Route exact path="/shop" component={Shop} />
             <Route exact path="/cart" component={Cart} />
-            <Route path="/shop/:item" component={ShopDetails} />
+            <Route path="/shop/:id" component={ShopDetails} />
           </Switch>
       </div>
     </Router>

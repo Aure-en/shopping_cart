@@ -1,8 +1,16 @@
+import menu1 from '../assets/menu1.jpg'
+import menu2 from '../assets/menu2.jpg'
+import menu3 from '../assets/menu3.jpg'
+
 const menu = [
   {
     name: 'Uncovering',
     price: '$125',
     description: 'First steps in a new world of flavors',
+    image: {
+      src: menu1,
+      alt: 'Halibut'
+    },
     details:
     [
       {
@@ -17,12 +25,17 @@ const menu = [
         name: 'Apple',
         description: 'Brown Butter Mousse, Apple Confit, Armagnac Sabayon'
       }
-    ]
+    ],
+    id: 1
   },
   {
     name: 'Rhodes Exploration',
     price: '$175 per person',
     description: 'An exquisite and unforgettable 5-courses dinner',
+    image: {
+      src: menu2,
+      alt: 'Langoustine'
+    },
     details:
     [
       {
@@ -45,12 +58,17 @@ const menu = [
         name: 'Hazelnut',
         description: 'Hazelnut Sphere, Frangelico Mousse, Praline Ice Cream'
       }
-    ]
+    ],
+    id: 2
   },
   {
     name: 'Chef\'s Tasting',
     price: '$395 per person - with wine pairing',
     description: 'A full immersion in our chef\'s mind',
+    image: {
+      src: menu3,
+      alt: 'Chocolate Dessert'
+    },
     details:
     [
       {
@@ -98,7 +116,8 @@ const menu = [
         description: 'Tropical Fruit "Pavlova," Coconut Sorbet, Lemongrass-Kefir Lime Sauce',
         wine: 'Château La Rame, Reserve du Château, Sainte-Croix-du-Monte, France 2014'
       }
-    ]
+    ],
+    id: 3
   },
 ]
 
