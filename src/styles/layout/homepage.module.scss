@@ -1,0 +1,17 @@
+@import '../utils/variables';
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/restaurant.png');
+}
+
+.description {
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}

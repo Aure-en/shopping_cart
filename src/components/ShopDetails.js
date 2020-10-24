@@ -26,14 +26,13 @@ function ShopDetails( {cart, updateCart, match} ) {
 
   useEffect(() => {
     updateCart(order)
-    console.log(order)
   })
 
   const { name, price, description, image, details, id } = item
 
   useEffect(() => {
     setItem(menu.filter(item => item.id === +match.params.id)[0])
-  }, [])
+  }, [match.params.id])
 
   const changeQuantity = (event) => {
     setQuantity(event.target.value)

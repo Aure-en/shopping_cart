@@ -20,7 +20,6 @@ function Cart( {cart, updateCart} ) {
 
   useEffect(() => {
     updateCart(order)
-    console.log(order)
   })
 
   return (

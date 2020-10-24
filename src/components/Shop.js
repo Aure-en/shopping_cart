@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import menu from '../data/menu'
 import Menu from './Menu'
+import styles from '../styles/layout/shop.module.scss'
 
 function Shop({ cart, updateCart }) {
 
@@ -17,17 +18,19 @@ function Shop({ cart, updateCart }) {
   useEffect(() => updateCart(order))
 
   return (
-    <ul>
-      {
-        menu.map(
-          item => (
-            <li className="menu" key={item.id}>
-              <Menu name={item.name} price={item.price} description={item.description} image={item.image} qty={0} id={item.id} addToCart={addToCart} />
-            </li>
+    <main className={styles.shop}>
+      <ul>
+        {
+          menu.map(
+            item => (
+              <li className="menu" key={item.id}>
+                <Menu name={item.name} price={item.price} description={item.description} image={item.image} qty={0} id={item.id} addToCart={addToCart} />
+              </li>
+            )
           )
-        )
-      }
-    </ul>
+        }
+      </ul>
+    </main>
   )
 }
 

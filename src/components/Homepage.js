@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from '../styles/components/homepage.module.scss'
+import styles from '../styles/layout/homepage.module.scss'
 
 function Homepage() {
   return (
     <main className={styles.homepage}>
-      <div className={styles.description}>
-        <h1 className="description__title">Rhodes Restaurant</h1>
+      <div className={`${styles.description} box`}>
+        <h1>Rhodes Restaurant</h1>
+
+        <span className="decoration">⬧</span>
 
         <div className="description__text">
           <p>Since opening in 1993, Rhodes has earned its place among the pillars of New York City’s bustling dining scene, receiving numerous accolades for its refined European cuisine, world-class cellar and gracious hospitality.</p>
@@ -16,7 +18,7 @@ function Homepage() {
           <p>Presented with a flourish of fine hospitality, the restaurant’s effect is transportive, a seamless service overseen and orchestrated by more than 150 staff members behind-the-scenes.</p>
         </div>
       </div>
-      <Link to="/shop">Order now</Link>
+      <Link to="/shop" className="btn btn--filled">Order now</Link>
     </main>
   )
 }

@@ -1,4 +1,40 @@
+.App {
+  font-family: $font-primary;
+  font-size: 0.875rem;
+  color: $color-text;
+}
+
 p {
   text-align: justify;
-  margin: .5rem 0;
+  margin: 1rem 0;
+  text-indent: 1rem;
+  font-weight: 300;
+  line-height: 1.2rem;
+}
+
+h1 {
+  font-family: $font-secondary;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-primary;
+  font-size: 2rem;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.decoration {
+  font-size: 1.5rem;
+  color: $color-tertiary;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+.link--secondary {
+  color: $color-secondary;
 }

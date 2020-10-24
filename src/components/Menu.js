@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import styles from '../styles/layout/menu.module.scss'
 
 function Menu({ name, price, description, image, id, addToCart, qty }) {
 
@@ -10,18 +11,20 @@ function Menu({ name, price, description, image, id, addToCart, qty }) {
   }
 
   return (
-    <>
-    <Link to={`shop/${id}`}>
-      <img src={image.src} alt={image.alt} />
-      <div className="menu__name">{name}</div>
-    </Link>
+    <div className="box">
+      <Link to={`shop/${id}`}>
+        <div className={styles.menu__image}>
+          <img src={image.src} alt={image.alt} className/>
+        </div>
+        <h2 className="menu__name">{name}</h2>
+      </Link>
       <div className="menu__description">{description}</div>
       <div className="menu__price">{price}</div>
       <div className="menu__order">
         Order for <input type="number" min="0" value={quantity} onChange={changeQuantity}/>
         <button type="button" onClick={() => addToCart({ id, quantity })}>+</button>
       </div>
-    </>
+    </div>
   )
 }
 
