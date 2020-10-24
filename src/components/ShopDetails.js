@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import menu from '../data/menu'
 
-function ShopDetails( {match} ) {
+function ShopDetails( {cart, updateCart, match} ) {
 
   const [quantity, setQuantity] = useState(0)
+  const [order, setOrder] = useState(cart)
   const [item, setItem] = useState({
     name: '',
     description: '',
@@ -15,7 +16,20 @@ function ShopDetails( {match} ) {
     }
   })
 
-  const { name, price, description, image, details } = item
+  const addToCart = (menu) => {
+    if (!([menu.id] in order)) {
+      setOrder({...order, [menu.id]: +menu.quantity})
+    } else {
+      setOrder({...order, [menu.id]: order[menu.id] + +menu.quantity })
+    }
+  }
+
+  useEffect(() => {
+    updateCart(order)
+    console.log(order)
+  })
+
+  const { name, price, description, image, details, id } = item
 
   useEffect(() => {
     setItem(menu.filter(item => item.id === +match.params.id)[0])
@@ -43,7 +57,7 @@ function ShopDetails( {match} ) {
       </div>
       <div className="menu__order">
         Order for <input type="number" minvalue="0" value={quantity} onChange={changeQuantity}/>
-        <button type="button">+</button>
+        <button type="button" onClick={() => addToCart({id, quantity})}>+</button>
       </div>
     </main>
   )

@@ -18,7 +18,7 @@ function Menu({ name, price, description, image, id, addToCart }) {
       <div className="menu__description">{description}</div>
       <div className="menu__price">{price}</div>
       <div className="menu__order">
-        Order for <input type="number" minvalue="0" value={quantity} onChange={changeQuantity}/>
+        Order for <input type="number" min="0" value={quantity} onChange={changeQuantity}/>
         <button type="button" onClick={() => addToCart({ id, quantity })}>+</button>
       </div>
     </>
