@@ -1,3 +1,17 @@
+@import '../utils/variables';
+
 .shop {
-  background: url('../../assets/restaurant1.jpg');
+  background: $color-quaternary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.heading {
+  position: absolute;
+  background: $color-secondary;
+  padding: .75rem 2rem;
+  top: 5.5rem;
 }

@@ -19,6 +19,7 @@ function Shop({ cart, updateCart }) {
 
   return (
     <main className={styles.shop}>
+      <h1 className={styles.heading}>Menu</h1>
       <ul>
         {
           menu.map(

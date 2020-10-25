@@ -66,3 +66,27 @@ main {
 * {
 	box-sizing: border-box;
 }
+
+button {
+	border: none;
+	background: none;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+[contenteditable] {
+
+	cursor: pointer;
+	padding: 0 .25rem;
+
+	&:hover {
+		background: rgba($color-tertiary, .1);
+	}
+
+	&:focus {
+		outline: none;
+	}
+}

@@ -23,6 +23,7 @@ h1 {
 h2 {
   text-transform: uppercase;
   letter-spacing: .5px;
+  margin: .25rem 0;
 }
 
 .decoration {
@@ -36,5 +37,5 @@ a {
 }
 
 .link--secondary {
-  color: $color-secondary;
+  color: $color-quaternary;
 }
