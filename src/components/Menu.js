@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/layout/menu.module.scss'
+import stylesCart from '../styles/layout/cart.module.scss'
 
-function Menu({ name, price, description, image, id, addToCart, qty }) {
+function Menu({ name, price, description, image, id, changeCart, qty }) {
 
   const [quantity, setQuantity] = useState(qty)
 
@@ -28,7 +29,7 @@ function Menu({ name, price, description, image, id, addToCart, qty }) {
   return (
     <div className={`box box--borderless ${styles.menu}`}>
       <Link to={`shop/${id}`}>
-        <div className={styles.menu__image}>
+        <div className={`${styles.menu__image} ${stylesCart.menu__image}`}>
           <img src={image.src} alt={image.alt}/>
         </div>
       </Link>
@@ -47,7 +48,7 @@ function Menu({ name, price, description, image, id, addToCart, qty }) {
         <button className="btn" type="button" onClick={incrementQuantity}>+</button>
       </div>
 
-      <button className={`${styles.menu__submit} btn--big`} type="button" onClick={() => addToCart({ id, quantity })}>+</button>
+      <button className={`${styles.menu__submit} ${stylesCart.menu__delete} btn--big`} type="button" onClick={() => changeCart({ id, quantity })}>+</button>
     </div>
   )
 }

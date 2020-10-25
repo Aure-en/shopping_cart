@@ -39,3 +39,10 @@ a {
 .link--secondary {
   color: $color-quaternary;
 }
+
+.heading {
+  position: absolute;
+  background: $color-secondary;
+  padding: .75rem 2rem;
+  top: 5.5rem;
+}

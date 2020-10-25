@@ -8,24 +8,20 @@ function Shop({ cart, updateCart }) {
   const [order, setOrder] = useState(cart)
 
   const addToCart = (menu) => {
-    if (!([menu.id] in order)) {
-      setOrder({...order, [menu.id]: +menu.quantity})
-    } else {
-      setOrder({...order, [menu.id]: order[menu.id] + +menu.quantity })
-    }
+    setOrder({...order, [menu.id]: +menu.quantity})
   }
 
   useEffect(() => updateCart(order))
 
   return (
     <main className={styles.shop}>
-      <h1 className={styles.heading}>Menu</h1>
+      <h1 className='heading'>Menu</h1>
       <ul>
         {
           menu.map(
             item => (
               <li className="menu" key={item.id}>
-                <Menu name={item.name} price={item.price} description={item.description} image={item.image} qty={0} id={item.id} addToCart={addToCart} />
+                <Menu name={item.name} price={item.price} description={item.description} image={item.image} qty={cart[item.id] || 0} id={item.id} changeCart={addToCart} />
               </li>
             )
           )

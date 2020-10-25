@@ -97,11 +97,6 @@ const menu = [
         wine: 'Krug, "Grand Cuvee," Reims NV'
       },
       {
-        name: 'Dover Sole',
-        description: 'Sautéed Dover Sole; Almonds, Chanterelles, Soy-Lime Emulsion',
-        wine: 'Krug, "Grand Cuvee," Reims NV'
-      },
-      {
         name: 'Halibut',
         description: 'Poached Halibut; Artichoke Medley, Black Truffle Barigoule',
         wine: 'Marsannay, Domaine Sylvain Pataille, Burgundy, France 2018'

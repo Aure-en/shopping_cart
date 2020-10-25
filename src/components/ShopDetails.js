@@ -68,6 +68,7 @@ function ShopDetails( {cart, updateCart, match} ) {
             <li className={styles.course} key={index}>
               <div className={styles.course__name}>{course.name}</div>
               <div>{course.description}</div>
+              {course.wine && <div className={styles.course__wine}>{course.wine}</div>}
             </li>
             ))
           }
