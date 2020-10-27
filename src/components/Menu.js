@@ -9,7 +9,7 @@ function Menu({ name, price, description, image, id, changeCart, qty }) {
   const [quantity, changeQuantity, incrementQuantity, decrementQuantity, validateQuantity] = useOrderQuantity(qty)
 
   return (
-    <div className={`box box--borderless ${styles.menu}`}>
+    <div className={`${styles.menu}`}>
       <Link to={`shop/${id}`}>
         <div className={`${styles.menu__image} ${stylesCart.menu__image}`}>
           <img src={image.src} alt={image.alt}/>

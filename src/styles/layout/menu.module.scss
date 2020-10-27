@@ -3,11 +3,21 @@
 .menu {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
 }
 
 .menu__image {
   height: 20vh;
   margin-bottom: 1rem;
+
+  @media all and (min-width: 992px) {
+    height: 100%;
+  }
+
+  @media all and (min-width: 1600px) {
+    max-height: 50vh;
+  }
 
   > img {
     width: 100%;

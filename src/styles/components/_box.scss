@@ -1,6 +1,4 @@
 .box {
-  width: 85vw;
-  margin: 2rem 1rem;
   background: rgba($color-secondary, .85);
   border: 3px solid $color-primary;
   outline: 1px solid $color-primary;
@@ -14,4 +12,13 @@
   outline: 2px solid $color-secondary;
   outline-offset: 8px;
   margin: 3rem .25rem;
+
+  @media all and (min-width: 992px) {
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
 }

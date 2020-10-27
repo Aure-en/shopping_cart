@@ -35,7 +35,7 @@ function ShopDetails( {cart, updateCart, match, qty} ) {
 
   return (
     <main className={styles.shopDetails}>
-      <img className={styles.background} src={image.src} alt={image.alt} />
+      <img className={styles.image} src={image.src} alt={image.alt} />
       <div className={`${styles.content} box`}>
         <h1 className={styles.menu__title}>{name}</h1>
         <span className="decoration">⬧</span>
@@ -51,7 +51,7 @@ function ShopDetails( {cart, updateCart, match, qty} ) {
             ))
           }
         </ul>
-        <div className={styles_menu.menu__price}>{price} per person</div>
+        <div className={styles_menu.menu__price}>{price}</div>
         <div className={styles.menu__order}>
         Order for
         <button className="btn" type="button" onClick={decrementQuantity}>-</button>

@@ -8,3 +8,18 @@
   justify-content: center;
   position: relative;
 }
+
+.list {
+  @media all and (min-width: 992px) {
+    display: flex;
+    height: calc(100% - 3rem);
+    align-items: stretch;
+    margin-top: 3rem;
+  }
+}
+
+.menu {
+  @media all and (min-width: 992px) {
+    display: flex;
+  }
+}

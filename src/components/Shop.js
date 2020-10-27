@@ -16,11 +16,11 @@ function Shop({ cart, updateCart }) {
   return (
     <main className={styles.shop}>
       <h1 className='heading'>Menu</h1>
-      <ul>
+      <ul className={styles.list}>
         {
           menu.map(
             item => (
-              <li className="menu" key={item.id}>
+              <li className={`box box--borderless ${styles.menu}`} key={item.id}>
                 <Menu name={item.name} price={item.price} description={item.description} image={item.image} qty={cart[item.id] || 0} id={item.id} changeCart={addToCart} />
               </li>
             )

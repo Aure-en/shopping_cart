@@ -26,6 +26,11 @@ h2 {
   margin: .25rem 0;
 }
 
+h3 {
+  text-transform: uppercase;
+  font-size: 1.125rem;
+}
+
 .decoration {
   font-size: 1.5rem;
   color: $color-tertiary;
@@ -45,4 +50,8 @@ a {
   background: $color-secondary;
   padding: .75rem 2rem;
   top: 5.5rem;
+}
+
+.text-center {
+  text-align: center;
 }

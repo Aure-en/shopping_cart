@@ -5,7 +5,7 @@ import menu3 from '../assets/menu3.jpg'
 const menu = [
   {
     name: 'Uncovering',
-    price: '$125',
+    price: '$195 per person - with wine pairing',
     description: 'First steps in a new world of flavors',
     image: {
       src: menu1,
@@ -15,22 +15,25 @@ const menu = [
     [
       {
         name: 'Kampachi',
-        description: 'Kampachi-Flying Fish Roe Sashimi; Ginger-Wasabi Emulsion'
+        description: 'Kampachi-Flying Fish Roe Sashimi; Ginger-Wasabi Emulsion',
+        wine: 'Albariño, "Lagar de Pintos," Rías Baixas, Spain 2017'
       },
       {
         name: 'Red Snapper',
-        description: 'Baked Snapper; Acorn Squash "Ceviche," Baja Style Shrimp Sauce'
+        description: 'Baked Snapper; Acorn Squash "Ceviche," Baja Style Shrimp Sauce',
+        wine: 'Riesling, "Alma" Amphora, Salomon Undhof, Kremstal, Austria 2017'
       },
       {
         name: 'Apple',
-        description: 'Brown Butter Mousse, Apple Confit, Armagnac Sabayon'
+        description: 'Brown Butter Mousse, Apple Confit, Armagnac Sabayon',
+        wine: 'Château La Rame, Reserve du Château, Sainte-Croix-du-Monte, France 2014'
       }
     ],
     id: 1
   },
   {
     name: 'Rhodes Exploration',
-    price: '$175 per person',
+    price: '$275 per person - with wine pairing',
     description: 'An exquisite and unforgettable 5-courses dinner',
     image: {
       src: menu2,
@@ -40,23 +43,28 @@ const menu = [
     [
       {
         name: 'Tuna',
-        description: 'Layers of Thinly Pounded Yellowfin Tuna; Foie Gras, Toasted Baguette, Chives, Extra Virgin Olive Oil'
+        description: 'Layers of Thinly Pounded Yellowfin Tuna; Foie Gras, Toasted Baguette, Chives, Extra Virgin Olive Oil',
+        wine: 'Albariño, "Lagar de Pintos," Rías Baixas, Spain 2017'
       },
       {
         name: 'Sepia',
-        description: 'Sautéed Sepia "Ribbons"; Saffron Risotto, Lemon Confit Emulsion'
+        description: 'Sautéed Sepia "Ribbons"; Saffron Risotto, Lemon Confit Emulsion',
+        wine: 'Riesling, "Alma" Amphora, Salomon Undhof, Kremstal, Austria 2017'
       },
       {
         name: 'Filet Mignon',
-        description: 'Pan Roasted Filet Mignon; Mushroom-Roasted Vegetables, Natural Jus'
+        description: 'Pan Roasted Filet Mignon; Mushroom-Roasted Vegetables, Natural Jus',
+        wine: 'Furmint Blend, "Haloze," Weingut Gross, Štajerska, Slovenia 2017'
       },
       {
         name: 'Tropical Fruit',
-        description: 'Exotic Fruit “Pavlova,” Coconut Sorbet, Lemongrass-Kefir Lime Sauce'
+        description: 'Exotic Fruit “Pavlova,” Coconut Sorbet, Lemongrass-Kefir Lime Sauce',
+        wine: 'Château La Rame, Reserve du Château, Sainte-Croix-du-Monte, France 2014'
       },
       {
         name: 'Hazelnut',
-        description: 'Hazelnut Sphere, Frangelico Mousse, Praline Ice Cream'
+        description: 'Hazelnut Sphere, Frangelico Mousse, Praline Ice Cream',
+        wine: 'Trappist Ale, Trappistes Rochefort 6, Brasserie de Rochefort, Belgium'
       }
     ],
     id: 2
@@ -64,7 +72,7 @@ const menu = [
   {
     name: 'Chef\'s Tasting',
     price: '$395 per person - with wine pairing',
-    description: 'A full immersion in our chef\'s mind',
+    description: 'A full immersion in our chef\'s mind. Tailored from beginning to end.',
     image: {
       src: menu3,
       alt: 'Chocolate Dessert'
@@ -113,7 +121,7 @@ const menu = [
       }
     ],
     id: 3
-  },
+  }
 ]
 
 export default menu
