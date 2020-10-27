@@ -24,7 +24,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav cart={cart} />
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route exact path="/shop" render={(props) => <Shop cart={cart} updateCart={updateCart} {...props} />} />

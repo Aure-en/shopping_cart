@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom'
 import styles from '../styles/layout/menu.module.scss'
 import stylesCart from '../styles/layout/cart.module.scss'
 import useOrderQuantity from '../hooks/useOrderQuantity'
+import useCart from '../hooks/useCart'
 
-function Menu({ name, price, description, image, id, changeCart, qty }) {
+function Menu({ name, price, description, image, id, changeCart, cart, qty, updateCart, preview }) {
 
   const [quantity, changeQuantity, incrementQuantity, decrementQuantity, validateQuantity] = useOrderQuantity(qty)
+
+  const addToCart = useCart(cart, updateCart)
 
   return (
     <div className={`${styles.menu}`}>
@@ -26,7 +29,29 @@ function Menu({ name, price, description, image, id, changeCart, qty }) {
       <div className={styles.menu__order}>
         Order for
         <button className="btn" type="button" onClick={decrementQuantity}>-</button>
-        <span className={styles.menu__input} onInput={changeQuantity} onBlur={validateQuantity} contentEditable suppressContentEditableWarning={true}>{quantity}</span>
+
+        {
+          preview ?
+          <span 
+            className={styles.menu__input} 
+            onInput={(e) => {
+              changeQuantity(e);
+              addToCart({ id, quantity })
+              console.log(cart)}
+            } 
+            onBlur={validateQuantity} 
+            contentEditable 
+            suppressContentEditableWarning={true}>{quantity}
+          </span> :
+          <span 
+            className={styles.menu__input} 
+            onInput={changeQuantity} 
+            onBlur={validateQuantity} 
+            contentEditable 
+            suppressContentEditableWarning={true}>{quantity}
+          </span>
+        }
+        
         <button className="btn" type="button" onClick={incrementQuantity}>+</button>
       </div>
 

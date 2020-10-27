@@ -23,6 +23,7 @@ h1 {
 h2 {
   text-transform: uppercase;
   letter-spacing: .5px;
+  font-size: 1.125rem;
   margin: .25rem 0;
 }
 
@@ -43,6 +44,8 @@ a {
 
 .link--secondary {
   color: $color-quaternary;
+  font-family: $font-primary;
+  font-weight: 300;
 }
 
 .heading {

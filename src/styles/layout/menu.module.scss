@@ -5,6 +5,11 @@
   flex-direction: column;
   justify-content: space-around;
   flex: 1;
+
+  @media all and (min-width: 992px) {
+    align-items: center;
+  }
+
 }
 
 .menu__image {

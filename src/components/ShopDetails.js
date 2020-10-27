@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import useOrderQuantity from '../hooks/useOrderQuantity'
+import useCart from '../hooks/useCart'
 import menu from '../data/menu'
 import styles_menu from '../styles/layout/menu.module.scss'
 import styles from '../styles/layout/shopDetails.module.scss'
 
-function ShopDetails( {cart, updateCart, match, qty} ) {
+function ShopDetails( {cart, updateCart, match} ) {
 
-  const [quantity, changeQuantity, incrementQuantity, decrementQuantity, validateQuantity] = useOrderQuantity(qty)
-  const [order, setOrder] = useState(cart)
+  const [quantity, changeQuantity, incrementQuantity, decrementQuantity, validateQuantity] = useOrderQuantity(cart[+match.params.id])
   const [item, setItem] = useState({
     name: '',
     description: '',
@@ -19,13 +19,7 @@ function ShopDetails( {cart, updateCart, match, qty} ) {
     }
   })
 
-  const addToCart = (menu) => {
-    setOrder({...order, [menu.id]: +menu.quantity})
-  }
-
-  useEffect(() => {
-    updateCart(order)
-  })
+  const addToCart = useCart(cart, updateCart);
 
   const { name, price, description, image, details, id } = item
 

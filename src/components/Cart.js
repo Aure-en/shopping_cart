@@ -31,13 +31,15 @@ function Cart( { cart, updateCart } ) {
 
   if (Object.keys(cart).length === 0) {
     return (
-      <div className={`box ${styles.overview}`}>
-        <h2>Order</h2>
-        <span className="decoration">⬧</span>
-        <div className="text-center">Sorry, it appears that your cart is empty. <br/>
-        Feel free to take a look at our menu and come back later.</div>
-        <Link to="/shop" className="btn btn--text">Menu</Link>
-      </div>
+      <main className={styles.cart}>
+        <div className={`box ${styles.content}`}>
+          <h1>Order</h1>
+          <span className="decoration">⬧</span>
+          <div className="text-center">Sorry, it appears that your cart is empty. <br/>
+          Feel free to take a look at our menu and come back later.</div>
+          <Link to="/shop" className="btn btn--text">Menu</Link>
+        </div>
+      </main>
     )
 
   } else {
@@ -45,21 +47,31 @@ function Cart( { cart, updateCart } ) {
     return (
       <main className={styles.cart}>
         <div className={`box ${styles.content}`}>
-        <h1>Order</h1>
-        <span className="decoration">⬧</span>
-          <ul>
-            {
-              Object.keys(order).map( (itemId) => {
-                const item = menu.find(menuItem => menuItem.id === +itemId)
+          <h1>Order</h1>
+          <span className="decoration">⬧</span>
+            <ul>
+              {
+                Object.keys(order).map( (itemId) => {
+                  const item = menu.find(menuItem => menuItem.id === +itemId)
 
-                return (
-                  <li className={styles.item} key={item.id}>
-                      <Menu name={item.name} price={item.price} description={item.description} image={item.image} qty={order[itemId]} id={item.id} changeCart={() => removeFromCart(itemId)} />
-                  </li>
-                )
-              })
-            }
-          </ul>
+                  return (
+                    <li className={styles.item} key={item.id}>
+                        <Menu 
+                          name={item.name} 
+                          price={item.price} 
+                          description={item.description} 
+                          image={item.image} 
+                          qty={order[itemId]} 
+                          id={item.id} 
+                          cart={cart}
+                          updateCart={updateCart}
+                          changeCart={() => removeFromCart(itemId)}
+                          preview={true} />
+                    </li>
+                  )
+                })
+              }
+            </ul>
           <div className={styles.total}>Order Total: {calculatePrice(cart)}$</div>
         </div>
         <Link to="/" className="btn btn--text">Confirm</Link>
