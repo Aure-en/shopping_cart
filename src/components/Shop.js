@@ -2,11 +2,8 @@ import React from 'react'
 import menu from '../data/menu'
 import Menu from './Menu'
 import styles from '../styles/layout/shop.module.scss'
-import useCart from '../hooks/useCart'
 
 function Shop({ cart, updateCart }) {
-
-  const addToCart = useCart(cart, updateCart)
 
   return (
     <main className={styles.shop}>
@@ -24,8 +21,6 @@ function Shop({ cart, updateCart }) {
                   qty={cart[item.id] || 0} 
                   id={item.id}
                   cart={cart}
-                  preview={false}
-                  changeCart={addToCart}
                   updateCart={updateCart}/>
               </li>
             )

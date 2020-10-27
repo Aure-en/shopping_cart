@@ -19,7 +19,7 @@ function ShopDetails( {cart, updateCart, match} ) {
     }
   })
 
-  const addToCart = useCart(cart, updateCart);
+  const addToCart = useCart(cart, updateCart)[0];
 
   const { name, price, description, image, details, id } = item
 

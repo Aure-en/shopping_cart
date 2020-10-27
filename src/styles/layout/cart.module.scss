@@ -9,10 +9,6 @@
   position: relative;
   justify-content: center;
 
-  .menu__image {
-    display: none;
-  }
-
   .menu__delete {
     transform: rotate(45deg) scale(2.5);
 
@@ -29,7 +25,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin: 1rem;
 }
 
 .total {
