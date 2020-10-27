@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import useOrderQuantity from '../hooks/useOrderQuantity'
 import menu from '../data/menu'
 import styles_menu from '../styles/layout/menu.module.scss'
 import styles from '../styles/layout/shopDetails.module.scss'
 
-function ShopDetails( {cart, updateCart, match} ) {
+function ShopDetails( {cart, updateCart, match, qty} ) {
 
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, changeQuantity, incrementQuantity, decrementQuantity, validateQuantity] = useOrderQuantity(qty)
   const [order, setOrder] = useState(cart)
   const [item, setItem] = useState({
     name: '',
@@ -19,11 +20,7 @@ function ShopDetails( {cart, updateCart, match} ) {
   })
 
   const addToCart = (menu) => {
-    if (!([menu.id] in order)) {
-      setOrder({...order, [menu.id]: +menu.quantity})
-    } else {
-      setOrder({...order, [menu.id]: order[menu.id] + +menu.quantity })
-    }
+    setOrder({...order, [menu.id]: +menu.quantity})
   }
 
   useEffect(() => {
@@ -35,25 +32,6 @@ function ShopDetails( {cart, updateCart, match} ) {
   useEffect(() => {
     setItem(menu.filter(item => item.id === +match.params.id)[0])
   }, [match.params.id])
-
-  const changeQuantity = (event) => {
-    setQuantity(+event.target.textContent)
-  }
-
-  const incrementQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1)
-  }
-
-  const decrementQuantity = () => {
-    if (quantity < 1) return
-    setQuantity((prevQuantity) => prevQuantity - 1)
-  }
-
-  const validateQuantity = () => {
-    if (quantity < 0) {
-      setQuantity(0)
-    }
-  }
 
   return (
     <main className={styles.shopDetails}>

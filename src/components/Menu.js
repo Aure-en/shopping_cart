@@ -1,30 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/layout/menu.module.scss'
 import stylesCart from '../styles/layout/cart.module.scss'
+import useOrderQuantity from '../hooks/useOrderQuantity'
 
 function Menu({ name, price, description, image, id, changeCart, qty }) {
 
-  const [quantity, setQuantity] = useState(qty)
-
-  const changeQuantity = (event) => {
-    setQuantity(+event.target.textContent)
-  }
-
-  const incrementQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1)
-  }
-
-  const decrementQuantity = () => {
-    if (quantity < 1) return
-    setQuantity((prevQuantity) => prevQuantity - 1)
-  }
-
-  const validateQuantity = () => {
-    if (quantity < 0) {
-      setQuantity(0)
-    }
-  }
+  const [quantity, changeQuantity, incrementQuantity, decrementQuantity, validateQuantity] = useOrderQuantity(qty)
 
   return (
     <div className={`box box--borderless ${styles.menu}`}>

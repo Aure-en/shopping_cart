@@ -18,7 +18,6 @@ function App() {
         delete newCart[item]
       }
     }
-
     setCart(newCart)
   }
 
