@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom'
 import styles from '../styles/layout/menu.module.scss'
 import stylesCart from '../styles/layout/cart.module.scss'
 import useOrderQuantity from '../hooks/useOrderQuantity'
-import useCart from '../hooks/useCart'
 
-function Menu({ name, price, description, image, id, cart, qty, updateCart}) {
+
+function Menu({ name, price, description, image, id, qty, changeCart}) {
 
   const [quantity, changeQuantity, incrementQuantity, decrementQuantity, validateQuantity] = useOrderQuantity(qty)
-
-  const addToCart = useCart(cart, updateCart)[0]
 
   return (
     <div className={`${styles.menu}`}>
@@ -20,7 +18,7 @@ function Menu({ name, price, description, image, id, cart, qty, updateCart}) {
       </Link>
 
       <Link to={`shop/${id}`}>
-        <h2 className="menu__name">{name}</h2>
+        <h2>{name}</h2>
       </Link>
       
       <div className={styles.menu__description}>{description}</div>
@@ -42,7 +40,7 @@ function Menu({ name, price, description, image, id, cart, qty, updateCart}) {
         
       </div>
 
-      <button className={`${styles.menu__submit} ${stylesCart.menu__delete} btn--big`} type="button" onClick={() => addToCart({ id, quantity })}>+</button>
+      <button className={`${styles.menu__submit} ${stylesCart.menu__delete} btn--big`} type="button" onClick={() => changeCart({ id, quantity })}>+</button>
     </div>
   )
 }

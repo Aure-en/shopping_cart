@@ -5,17 +5,11 @@ function useCart(cart, updateCart) {
   const [order, setOrder] = useState(cart)
 
   const addToCart = (menu) => {
-    const newOrder = {...order}
-    newOrder[menu.id] = +menu.quantity
-    setOrder(newOrder)
+    setOrder({...order, [menu.id]: +menu.quantity})
   }
 
-  const removeFromCart = (menuId) => {
-    setOrder((prevOrder) => {
-      const newOrder = {...prevOrder}
-      delete newOrder[menuId]
-      return newOrder
-    })
+  const removeFromCart = (id) => {
+    setOrder({...order, [id]: 0})
   }
 
   useEffect(() => {

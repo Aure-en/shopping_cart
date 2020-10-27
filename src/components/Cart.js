@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import menu from '../data/menu'
 import MenuPreview from './MenuPreview'
 import styles from '../styles/layout/cart.module.scss'
+import useCart from '../hooks/useCart'
 
 function Cart( { cart, updateCart } ) {
+
+  const removeFromCart = useCart(cart, updateCart)[1]
 
   const calculatePrice = (cart) => {
     let price = 0;
@@ -51,6 +54,7 @@ function Cart( { cart, updateCart } ) {
                           id={item.id} 
                           cart={cart}
                           updateCart={updateCart}
+                          changeCart={removeFromCart}
                         />
                     </li>
                   )

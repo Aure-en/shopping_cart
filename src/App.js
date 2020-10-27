@@ -11,9 +11,11 @@ function App() {
 
   const [cart, setCart] = useState({})
 
-  const updateCart = (newCart) => {
+  const updateCart = (cart) => {
 
-    for (const item in newCart) {
+    const newCart = {...cart}
+
+    for (const item in cart) {
       if (newCart[item] === 0) {
         delete newCart[item]
       }
